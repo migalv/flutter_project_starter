@@ -1,0 +1,16 @@
+include: package:lint/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.config.dart"
+    - "**/*.mocks.dart"
+    - lib/generated_plugin_registrant.dart
+  errors:
+    missing_required_param: error
+    missing_return: error
+    must_be_immutable: error
+    parameter_assignments: ignore
+    todo: info
+    constant_identifier_names: ignore
