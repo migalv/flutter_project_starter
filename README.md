@@ -1,9 +1,11 @@
-# Complete Flutter Project Starter (In Development)
+[![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
+
+# Definitive Flutter Project Starter
 A Flutter Project Starter with very useful libraries and boilerplate code to help you setup your Flutter projects in minutes.
 
 ## Flutter version
-This project starter pack was created using Flutter v2.10.2
-*I would recommend to always update the Flutter version used in your project*
+This project starter pack was created using Flutter v3 <br>
+*I would recommend to always have up-to-date the Flutter versions used in your project*
 
 ## Project setup
 Follow these steps to properly setup your project.
@@ -16,34 +18,122 @@ Code generation is super useful, it reduces the amount of boilerplate code we ha
 Code generation works mainly works with the `build_runner` tool. You can find it in the `dev_dependencies` in the `pubspec.yaml` file.
 
 The main command you have to learn is the following:
-`flutter pub run build_runner build --delete-conflicting-outputs`
+`flutter pub run build_runner build --delete-conflicting-outputs`. 
 This command will generate the necessary files based on the code generation libraries that you are using.
 
 Another usefull command is:
-`flutter pub run build_runner watch --delete-conflicting-outputs`
+`flutter pub run build_runner watch --delete-conflicting-outputs`. 
 The main difference is that you are executing the `watch` command instead of the `build` command. This will make it so everytime you save the files in your project it will rerun the code generation so you always have the updated version for the generated files.
 
-## Exceptions
-For error handling I recommend using exceptions. All exceptions that you create should extend the `BaseException` class.
-Each exception is mapped to a specific and unique error code. This is very helpful for bug localization, because you can then search for the error code in your code and find all the places it could be happening.
-Check the *domain\exceptions\example_exception.dart* and the *domain\exceptions\base_exception.dart* files to get an idea on how to create new exceptions.
-**TODO COMPLETE**
+## Flavors
+This project contains 3 flavors:
+
+1. **DEV** - Development environment. This should be used for developing the app.
+2. **QA** - Q&A environment. This environment is used to test the app.
+3. **PROD** - Production environemnt. This is the enviroment that will be published and will run on production.
+### **How to build**
+
+To run the desired flavor either use the launch configuration in VSCode/Android Studio or use the following commands:
+
+```sh
+# Development
+$ flutter run --flavor dev --target lib/main_dev.dart
+
+# Testing
+$ flutter run --flavor qa --target lib/main_qa.dart
+
+# Production
+$ flutter run --flavor prod --target lib/main_prod.dart
+```
+
+### **How to run**
+
+You can build the different flavors by using the following command:
+
+```
+flutter build <platform> [--profile | --release] --flavor <environment> -t <path_to_main>
+```
+
+`<platform>` lets you choose between Android or iOS. Replace with:
+- ios
+- appbundle
+
+`[--profile | --release]` is an optional option to let you select between Profile or Release Mode:
+- `--profile`
+- `--release`
+
+`<flavor>` allows you to choose between the 3 different flavors:
+- `prod` for publishing on app stores
+- `qa` for QA & testing
+- `dev` for development
+
+You need to specify a `<path_to_main>` for each flavor. These mains can be found in:
+- `lib/main_prod.dart` for the production flavor.
+- `lib/main_qa.dart` for the testing flavor.
+- `lib/main_dev.dart` for the development flavor.
 
 ## Linting
+[![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
 
-## Testing
-**TODO COMPLETE**
+For linting we use the [lint](https://pub.dev/packages/lint) library. The set of rules follows the [Effective Dart: Style Guide](https://dart.dev/guides/language/effective-dart/style). Please refer to it to better understand the reasons for the strict rules.
 
 ## Recommended Libraries
 These are the libraries that I would recommend any Flutter developer that wants to bring their code quality to the next level.
 
 <details>
-    <summary>Mockito</summary>
-    Best library to quickly create mocks for proper testing.
-    Pub link: https://pub.dev/packages/mockito
+    <summary>BLoC state management</summary>
+    <br>
+    Most known state management library for Flutter.<br>
+    Pub links: <br>
+    - https://pub.dev/packages/flutter_bloc <br>
+    - https://pub.dev/packages/bloc <br>
+    Documentation: https://bloclibrary.dev <br>
 </details>
-**TODO COMPLETE LIST**
-
+<br>
+<details>
+    <summary>Dependency injection</summary>
+    <br>
+    For depenceny injection. Generates boilerplate code & saves time for development.<br>
+    GetIt: <br>
+    - https://pub.dev/packages/get_it <br>
+    <br>
+    Injectable: <br>
+    - https://pub.dev/packages/injectable <br>
+    - https://pub.dev/packages/injectable_generator <br>
+</details>
+<br>
+<details>
+    <summary>Navegation</summary>
+    <br>
+    The AutoRoute is great to simplify the app navegation & saves times by generating boilerplate code. <br>
+    Pub links: <br>
+    - https://pub.dev/packages/auto_route <br>
+    - https://pub.dev/packages/auto_route_generator <br>
+</details>
+<br>
+<details>
+    <summary>Serialization</summary>
+    <br>
+    The JSON serializable developed by Google helps to reduce the work when serializing Dart objects to JSON objects, reducing the boilerplate. <br>
+    Pub links: <br>
+    - https://pub.dev/packages/json_serializable <br>
+    - https://pub.dev/packages/json_serializable_generator <br>
+</details>
+<br>
+<details>
+    <summary>Testing</summary>
+    <br>
+    Mockito is the best library to quickly create mocks for proper testing .<br>
+    Pub link: https://pub.dev/packages/mockito<br>
+</details>
+<br>
+<details>
+    <summary>Flutter native Splash</summary>
+    <br>
+    Library integrates native splash screens & simplifies the process for Flutter. <br>
+    Pub link: https://pub.dev/packages/flutter_native_splash <br>
+</details>
+<br>
 
 ## Snippets
 Some useful snippets to make your coding journey a bit more enjoyable.
@@ -52,16 +142,76 @@ If you use VSCode add them to the dart.json snippets configuration file.
 
 <details>
     <summary>Quick Part Statement</summary>
-    Super neat for code generation.
-    ```
+    <br>
+    Super neat for code generation. 
+    <code><pre> 
     "Part statement": {
       "prefix": "ptg",
       "body": [
         "part '${TM_FILENAME_BASE}.g.dart';",
       ],
       "description": "Creates a filled-in part statement"
-    }
-    ```
+    }</code>
 </details>
+<details>
+    <summary>Quick Test structure</summary>
+    <br>
+    Super neat to create a a test file.
+    <code><pre> 
+    "Test file": {
+      "scope": "dart",
+      "prefix": "stest",
+      "body": [
+        "import 'package:flutter_test/flutter_test.dart';",
+        "",
+        "void main() {",
+        "",
+        "  setUp(() {",
+        "",
+        "  });",
+        "",
+        "  group('', () {",
+        "    test(",
+        "      'should ',",
+        "      () async {",
+        "        // arrange",
+        "",
+        "        // act",
+        "",
+        "        // assert",
+        "",
+        "      },",
+        "    );",
+        "  });",
+        "}",
+      ],
+      "description": "Creates the boilerplate structure for a test file"
+    },</code>
+</details>
+<details>
+    <summary>Quick AAA test structure</summary>
+    <br>
+    Super neat to quickly generate AAA tests.
+    <code><pre> 
+    "Test AAA structure": {
+      "scope": "dart",
+      "prefix": "aaa",
+      "body": [
+        "test(",
+        "  'should ',",
+        "  () async {",
+        "  // arrange",
+        "  ",
+        "  // act",
+        "  ",
+        "  // assert",
+        "  ",
+        "  },",
+        ");",
+      ],
+      "description": "Creates a test with the arrange => act => assert structure"
+    }</code>
+</details>
+
 **TODO COMPLETE LIST**
 

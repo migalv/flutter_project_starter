@@ -7,6 +7,7 @@ analyzer:
     - "**/*.config.dart"
     - "**/*.mocks.dart"
     - lib/generated_plugin_registrant.dart
+    - lib/generated/**
   errors:
     missing_required_param: error
     missing_return: error
