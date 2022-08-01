@@ -7,6 +7,18 @@ A Flutter Project Starter with very useful libraries and boilerplate code to hel
 This project starter pack was created using Flutter v3 <br>
 *I would recommend to always have up-to-date the Flutter versions used in your project*
 
+## Architecture
+This project uses parts of the Clean Architecture. The folder structure is layered following the different layers of the Architecture:
+
+- Presentation layer
+- Application layer
+- Domain layer
+- Infrastructure layer
+
+<img src="./assets/markdown_files/clean_arch_diag.svg">
+
+You can read a more detailed information about each layer in their respective folders.
+
 ## Project setup
 Follow these steps to properly setup your project.
 
@@ -212,6 +224,3 @@ If you use VSCode add them to the dart.json snippets configuration file.
       "description": "Creates a test with the arrange => act => assert structure"
     }</code>
 </details>
-
-**TODO COMPLETE LIST**
-
