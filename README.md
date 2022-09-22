@@ -43,6 +43,21 @@ This project contains 3 flavors:
 1. **DEV** - Development environment. This should be used for developing the app.
 2. **QA** - Q&A environment. This environment is used to test the app.
 3. **PROD** - Production environemnt. This is the enviroment that will be published and will run on production.
+
+### **Finish Flavor setup**
+To finish the flavor setup for this template. Follow the steps below or you can check this great [post](https://flutterguide.com/flutter-flavor-separating-build-environments-in-flutter-apps/) by flutterguide.com
+
+#### Android
+- Change the package identifier. Go to /android/app/build.gradle
+- Change the App display name. Go to ./android/app/src/<flavor>/res/values/strings.xml
+- Change icons for each flavor. Go to ./android/app/src/<flavor>/res/
+
+#### iOS
+- Change the package identifer. In XCode go to Runner Targets > Build Settings > Search for Package identifier
+- Change the App display name. In XCode go to Runner Targets > Build Settings > Search for APP_DISPLAY_NAME
+- Change icons for each flavor. In XCode go to Runner > Assets
+
+EXTRA: Great tool to generate App icons: [Icon Kitchen](https://icon.kitchen/)
 ### **How to build**
 
 To run the desired flavor either use the launch configuration in VSCode/Android Studio or use the following commands:
