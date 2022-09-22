@@ -104,6 +104,11 @@ You need to specify a `<path_to_main>` for each flavor. These mains can be found
 
 For linting we use the [lint](https://pub.dev/packages/lint) library. The set of rules follows the [Effective Dart: Style Guide](https://dart.dev/guides/language/effective-dart/style). Please refer to it to better understand the reasons for the strict rules.
 
+## Navigation
+For the navigation I recommend using the [auto_route](https://pub.dev/packages/auto_route) package.
+
+Routes are defined in ./lib/routes/routes.dart
+
 ## Recommended Libraries
 These are the libraries that I would recommend any Flutter developer that wants to bring their code quality to the next level.
 
@@ -127,15 +132,6 @@ These are the libraries that I would recommend any Flutter developer that wants 
     Injectable: <br>
     - https://pub.dev/packages/injectable <br>
     - https://pub.dev/packages/injectable_generator <br>
-</details>
-<br>
-<details>
-    <summary>Navegation</summary>
-    <br>
-    The AutoRoute is great to simplify the app navegation & saves times by generating boilerplate code. <br>
-    Pub links: <br>
-    - https://pub.dev/packages/auto_route <br>
-    - https://pub.dev/packages/auto_route_generator <br>
 </details>
 <br>
 <details>
