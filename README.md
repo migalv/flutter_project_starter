@@ -23,6 +23,7 @@ You can read a more detailed information about each layer in their respective fo
 Follow these steps to properly setup your project.
 
 1. Generate code generation files `flutter pub run build_runner build --delete-conflicting-outputs`
+2. Change the name of the project in the pubspec.yaml
 
 ## Code generation
 Code generation is super useful, it reduces the amount of boilerplate code we have to write allowing us to focus on more important aspects of the development.
