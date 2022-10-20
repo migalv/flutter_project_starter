@@ -111,6 +111,16 @@ For the navigation I recommend using the [auto_route](https://pub.dev/packages/a
 
 Routes are defined in ./lib/routes/routes.dart
 
+## Splash screen
+A quick and easy way to add a splash screen to your projects is to use the [flutter_native_splash](https://pub.dev/packages/flutter_native_splash) package
+
+### Editing
+To edit the splash screens just go to `/flutter_native_splash-<flavor>.yaml` and edit it's contents. It's super easy.
+
+### Run this command to create your splash screen:
+You have to run the command for each flavor `prod` `dev` `qa`
+`flutter pub run flutter_native_splash:create --flavor <flavor>`
+
 ## Recommended Libraries
 These are the libraries that I would recommend any Flutter developer that wants to bring their code quality to the next level.
 

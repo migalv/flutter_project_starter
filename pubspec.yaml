@@ -12,6 +12,7 @@ dependencies:
   auto_route: ^5.0.1
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.2.11
   get_it: ^7.2.0
   injectable: ^1.5.3
 
