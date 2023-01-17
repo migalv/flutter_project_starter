@@ -207,6 +207,7 @@ DerivedData/
 .vscode/*
 .VSCodeCounter/
 !.vscode/launch.json
+!.vscode/settings.json
 
 ## Custom
 # Plugins (already resolved through pubspec.yaml)

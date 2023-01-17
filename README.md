@@ -24,7 +24,7 @@ Follow these steps to properly setup your project.
 
 1. Generate code generation files `flutter pub run build_runner build --delete-conflicting-outputs`
 2. Change the name of the project in the pubspec.yaml
-2. Search for complete_flutter_project_starter in the project & change it to you project name (IMPORTANT: also check for directories)
+3. Search for complete_flutter_project_starter in the project & change it to you project name (IMPORTANT: also check for directories)
 
 ## Code generation
 Code generation is super useful, it reduces the amount of boilerplate code we have to write allowing us to focus on more important aspects of the development.
