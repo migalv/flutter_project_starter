@@ -22,9 +22,12 @@ You can read a more detailed information about each layer in their respective fo
 ## Project setup
 Follow these steps to properly setup your project.
 
-1. Generate code generation files `flutter pub run build_runner build --delete-conflicting-outputs`
-2. Change the name of the project in the pubspec.yaml
-3. Search for complete_flutter_project_starter in the project & change it to you project name (IMPORTANT: also check for directories)
+1. Run `flutter pub get`
+2. Generate code generation files `flutter pub run build_runner build --delete-conflicting-outputs`
+3. Change the name of the project in the pubspec.yaml
+4. Change the App name in the ios/Runner.xcodeproj/project.pbxproj file by searching for APP_DISPLAY_NAME
+5. Search for complete_flutter_project_starter in the project & change it to you project name
+6. IMPORTANT: Also check for directories. For example: `android/app/src/main/kotlin/com/example/complete_flutter_project_starter/` and change the name of the file to your project name.
 
 ## Code generation
 Code generation is super useful, it reduces the amount of boilerplate code we have to write allowing us to focus on more important aspects of the development.
