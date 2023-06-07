@@ -49,5 +49,7 @@
 		<false/>
     <key>ITSAppUsesNonExemptEncryption</key>
 	  <false/>
-	</dict>
+		<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+</dict>
 </plist>

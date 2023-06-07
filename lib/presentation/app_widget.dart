@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class AppWidget extends StatelessWidget {
   final _appRouter = AppRouter();
 
-  AppWidget({Key? key}) : super(key: key);
+  AppWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

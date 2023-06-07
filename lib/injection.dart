@@ -16,13 +16,10 @@ Future<GetIt> configureDependencies({required Env env}) async {
   switch (env) {
     case Env.dev:
       stringEnv = 'dev';
-      break;
     case Env.prod:
       stringEnv = 'prod';
-      break;
     case Env.qa:
       stringEnv = 'test';
-      break;
   }
   return $initGetIt(getIt, environment: stringEnv);
 }
