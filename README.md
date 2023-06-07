@@ -4,7 +4,7 @@
 A Flutter Project Starter with very useful libraries and boilerplate code to help you setup your Flutter projects in minutes.
 
 ## Flutter version
-This project starter pack was created using Flutter v3 <br>
+This project starter pack was created using Flutter v3.10 & Dart 3.0 <br>
 *I would recommend to always have up-to-date the Flutter versions used in your project*
 
 ## Architecture
@@ -23,7 +23,7 @@ You can read a more detailed information about each layer in their respective fo
 Follow these steps to properly setup your project.
 
 1. Run `flutter pub get`
-2. Generate code generation files `flutter pub run build_runner build --delete-conflicting-outputs`
+2. Generate code generation files `dart run build_runner build --delete-conflicting-outputs`
 3. Change the name of the project in the pubspec.yaml
 4. Change the App name in the ios/Runner.xcodeproj/project.pbxproj file by searching for APP_DISPLAY_NAME
 5. Search for complete_flutter_project_starter in the project & change it to you project name
@@ -35,11 +35,11 @@ Code generation is super useful, it reduces the amount of boilerplate code we ha
 Code generation works mainly works with the `build_runner` tool. You can find it in the `dev_dependencies` in the `pubspec.yaml` file.
 
 The main command you have to learn is the following:
-`flutter pub run build_runner build --delete-conflicting-outputs`. 
+`dart run build_runner build --delete-conflicting-outputs`. 
 This command will generate the necessary files based on the code generation libraries that you are using.
 
 Another usefull command is:
-`flutter pub run build_runner watch --delete-conflicting-outputs`. 
+`dart run build_runner watch --delete-conflicting-outputs`. 
 The main difference is that you are executing the `watch` command instead of the `build` command. This will make it so everytime you save the files in your project it will rerun the code generation so you always have the updated version for the generated files.
 
 ## Flavors
@@ -63,7 +63,7 @@ To finish the flavor setup for this template. Follow the steps below or you can 
 - Change icons for each flavor. In XCode go to Runner > Assets
 
 EXTRA: Great tool to generate App icons: [Icon Kitchen](https://icon.kitchen/)
-### **How to build**
+### **How to run**
 
 To run the desired flavor either use the launch configuration in VSCode/Android Studio or use the following commands:
 
@@ -78,7 +78,9 @@ $ flutter run --flavor qa --target lib/main_qa.dart
 $ flutter run --flavor prod --target lib/main_prod.dart
 ```
 
-### **How to run**
+If you are using VSCode there is also a `.vscode/launch.json` file that defines the run configurations.
+
+### **How to build**
 
 You can build the different flavors by using the following command:
 
@@ -122,7 +124,7 @@ To edit the splash screens just go to `/flutter_native_splash-<flavor>.yaml` and
 
 ### Run this command to create your splash screen:
 You have to run the command for each flavor `prod` `dev` `qa`
-`flutter pub run flutter_native_splash:create --flavor <flavor>`
+`dart run flutter_native_splash:create --flavor <flavor>`
 
 ## Recommended Libraries
 These are the libraries that I would recommend any Flutter developer that wants to bring their code quality to the next level.
@@ -182,7 +184,7 @@ If you use VSCode add them to the dart.json snippets configuration file.
     <summary>Quick Part Statement</summary>
     <br>
     Super neat for code generation. 
-    <code><pre> 
+    <code class="language-json"><pre> 
     "Part statement": {
       "prefix": "ptg",
       "body": [
@@ -195,7 +197,7 @@ If you use VSCode add them to the dart.json snippets configuration file.
     <summary>Quick Test structure</summary>
     <br>
     Super neat to create a a test file.
-    <code><pre> 
+    <code class="language-json"><pre> 
     "Test file": {
       "scope": "dart",
       "prefix": "stest",
@@ -230,7 +232,7 @@ If you use VSCode add them to the dart.json snippets configuration file.
     <summary>Quick AAA test structure</summary>
     <br>
     Super neat to quickly generate AAA tests.
-    <code><pre> 
+    <code class="language-json"><pre> 
     "Test AAA structure": {
       "scope": "dart",
       "prefix": "aaa",
@@ -249,4 +251,51 @@ If you use VSCode add them to the dart.json snippets configuration file.
       ],
       "description": "Creates a test with the arrange => act => assert structure"
     }</code>
+</details>
+<details>
+    <summary>Create Freezed Data Class</summary>
+    <br>
+    Great for creating Freezed Data classes
+    <code class="language-json"><pre> 
+    "Freezed Data Class": {
+    "prefix": "fdataclass",
+    "body": [
+      "import 'package:freezed_annotation/freezed_annotation.dart';",
+      "",
+      "part '${TM_FILENAME_BASE}.freezed.dart';",
+      "",
+      "@freezed",
+      "class ${1:DataClass} with _$${1:DataClass}{",
+      "  const factory ${1:DataClass}(${2}) = _${1:DataClass};",
+      "}"
+    ],
+    "description": "Freezed Data Class"
+    }</code>
+</details>
+<details>
+  <summary>Create DTOs</summary>
+  <br>
+  Great for creating DTOs
+  <code class="language-json"><pre> 
+  "DTO Class": {
+  "prefix": "dto",
+  "body": [
+    "import 'package:freezed_annotation/freezed_annotation.dart';",
+    "",
+    "part '${TM_FILENAME_BASE}.freezed.dart';",
+    "part '${TM_FILENAME_BASE}.g.dart';",
+    "",
+    "@freezed",
+    "class ${1:DataClass}DTO with _$${1:DataClass}DTO{",
+    "  const factory ${1:DataClass}DTO(${2}) = _${1:DataClass}DTO;",
+    "",
+    "  const ${1:DataClass}DTO._();",
+    "",
+    "  factory ${1:DataClass}DTO.fromJson(Map<String, dynamic> json) => _$${1:DataClass}DTOFromJson(json);",
+    "",
+    "  ${1:DataClass} toDomain() {return ${1:DataClass}();}",
+    "}",
+  ],
+  "description": "Freezed Data Class"
+  }</code>
 </details>
